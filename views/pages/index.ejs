@@ -13,9 +13,29 @@
 
     <main>
         <div className="jumbotron">
-            
+            <h1>This is Pretty Awesome</h1>
+            <p>Welcome to templating using EJS</p>
+
+            <h2>Using Variables</h2>
+            <p>This is my fervernt <%= tagline %></p>
+
+            <ul>
+                <% people.forEach(function(person) { %>
+                    <li>
+                        <strong><%= person.first_name+" "+person.last_name %></strong><br>
+                        <em>Email</em>: <%= person.email %><br>
+                        <em>Gender</em>: <%= person.gender %>
+                        <em>D.O.B</em>: <%= person.dob %>
+
+                    </li>
+                    <% }); %>
+            </ul>
         </div>
     </main>
     
+<footer>
+    <%- include("../partials/footer"); %>
+</footer>
+
 </body>
 </html>
